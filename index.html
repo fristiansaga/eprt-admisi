@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EPrT® Admisi Telkom University</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://lac.telkomuniversity.ac.id/wp-content/uploads/2025/11/Icon-Tel-U.png"
+    />
+
+    <!-- Poppins untuk header + Raleway untuk hero -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Raleway:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main-header {
+        margin: 40px 195px 40px 195px; /* desktop margin */
+        padding: 20px;
+        border: 1px solid #d9d9d9;
+        border-radius: 12px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: #fff;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .header-left img {
+        height: 40px;
+      }
+
+      .header-right {
+        text-align: right;
+      }
+
+      .header-right .text-light {
+        font-size: 16px;
+        font-weight: 300;
+        font-style: italic;
+      }
+
+      .header-right .text-bold {
+        font-size: 16px;
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      /* HERO SECTION */
+      .hero-title {
+        font-family: "Raleway", sans-serif;
+        font-size: 40px;
+        font-weight: 600;
+        text-align: center;
+        color: #e74646;
+
+        margin-top: 10px;
+        line-height: 1.2;
+      }
+
+      /* CARD SECTION */
+      .card-section {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        margin-top: 10px;
+      }
+
+      .card {
+        width: 352px;
+        padding: 16px;
+        border: 1px solid #d9d9d9;
+        border-radius: 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+   .card a {
+  margin-top: 20px;
+  width: 100%;
+  height: 60px;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+  border-width: 1px;
+  border-style: solid;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Raleway", sans-serif;
+}
+
+
+      /* Wrapper agar posisi gambar tetap */
+      .card-image-wrapper {
+        width: 100%;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      /* Gambar default */
+      .card-image {
+        width: 100%;
+        border-radius: 12px;
+        display: block;
+
+        transform: scale(1);
+        transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+      }
+
+      /* Gambar hover */
+      .card-image-hover {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+
+        opacity: 0; /* tidak terlihat */
+        transform: scale(1.1); /* sedikit zoom */
+        transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+      }
+
+      /* Hover state */
+      .card:hover .card-image {
+        transform: scale(0.9); /* zoom-out */
+      }
+
+      .card:hover .card-image-hover {
+        opacity: 1; /* fade-in */
+        transform: scale(1); /* masuk dari zoom */
+      }
+      .btn-simulasi {
+        background-color: #ffe3e6;
+        border-color: #fdb9c0;
+        color: #e74646;
+      }
+
+      .btn-simulasi:hover {
+        background-color: #ffd3d7;
+        color: #e74646;
+      }
+
+      .btn-tes {
+        background-color: #ff6363;
+        border-color: #da1212;
+        color: #fff;
+      }
+
+      .btn-tes:hover {
+        background-color: #fe5252;
+        color: #fff;
+      }
+
+      .disabled-btn {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none; /* tidak bisa diklik */
+}
+
+
+      /* FOOTER */
+ 
+footer {
+  margin-top: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;             /* center vertical */
+  justify-content: center;         /* center horizontal */
+  color: #2d2d2d;
+  font-size: 12px;
+  box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.05);
+
+  padding: 8px 5px;                      /* hilangkan padding yang bikin tidak simetris */
+  font-style: normal;
+}
+
+
+      /* TABLET RESPONSIVE */
+      @media (max-width: 992px) {
+        .main-header {
+          margin: 30px 40px;
+          padding: 25px;
+          flex-direction: column;
+          text-align: center;
+          gap: 20px;
+        }
+
+        .header-right {
+          text-align: center;
+        }
+
+        .header-left img {
+          height: 35px;
+        }
+
+        .hero-title {
+          font-size: 40px;
+          padding: 0 20px;
+        }
+
+        .card-section {
+          flex-direction: column;
+          align-items: center;
+          gap: 30px;
+        }
+
+        footer {
+          font-size: 13px;
+        }
+      }
+
+      /* MOBILE RESPONSIVE */
+      @media (max-width: 576px) {
+        .main-header {
+          margin: 20px;
+          padding: 20px;
+        }
+
+        .header-left {
+          gap: 12px;
+        }
+
+        .header-left img {
+          height: 30px;
+        }
+
+        .header-right .text-light,
+        .header-right .text-bold {
+          font-size: 14px;
+        }
+
+        .hero-title {
+          font-size: 32px;
+          padding: 0 15px;
+        }
+
+        .card {
+          width: 90%;
+        }
+
+        .card-image {
+          width: 100%;
+        }
+
+        footer {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div class="header-left">
+        <img
+          src="https://lac.telkomuniversity.ac.id/wp-content/uploads/2025/11/Logo-Tel-U.svg"
+          alt="Logo 1"
+        />
+        <img
+          src="https://lac.telkomuniversity.ac.id/wp-content/uploads/2025/11/Logo-LaC.svg"
+          alt="Logo 2"
+        />
+      </div>
+
+      <div class="header-right">
+        <span class="text-light">We lead you</span> <br />
+        <span class="text-bold">to the GLOBAL WORLD</span>
+      </div>
+    </header>
+
+    <h1 class="hero-title">
+      EPrT® (English Proficiency Test) <br />
+      Admisi Telkom University
+    </h1>
+
+    <section class="card-section">
+      <div class="card">
+        <div class="card-image-wrapper">
+          <img
+            src="https://lac.telkomuniversity.ac.id/wp-content/uploads/2025/11/Card-simulasi.png"
+            alt="Simulasi"
+            class="card-image"
+          />
+
+          <img
+            src="https://lac.telkomuniversity.ac.id/wp-content/uploads/2025/11/Card-Simulasi-Hover.png"
+            alt="Simulasi Hover"
+            class="card-image-hover"
+          />
+        </div>
+
+        <a href="https://onlinelearning.telkomuniversity.ac.id/course/view.php?id=205" class="btn-simulasi">Mulai Simulasi</a>
+      </div>
+</div>
+      
+  <div class="card">
+      <div class="card-image-wrapper">
+          <img
+            src="https://lac.telkomuniversity.ac.id/wp-content/uploads/2025/11/card-tes.png"
+            alt="Tes"
+            class="card-image"
+          />
+
+          <img
+            src="https://lac.telkomuniversity.ac.id/wp-content/uploads/2025/11/Tes-EPrT.png"
+            alt="Tes Hover"
+            class="card-image-hover"
+          />
+        </div>
+
+        <a href="https://onlinelearning.telkomuniversity.ac.id/course/view.php?id=107" class="btn-tes">Mulai Tes</a>
+      </div>
+    </div>
+    </section>
+
+    <footer>
+      <p>
+      © 2025 Telkom University Language Center. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>
