@@ -84,6 +84,7 @@
         align-items: flex-start;
         gap: 40px;
         margin-top: 10px;
+        padding-bottom: 100px;
       }
 
       .card {
@@ -188,17 +189,19 @@
       /* FOOTER */
 
       footer {
-        margin-top: 80px;
+        margin-top: auto; /* footer selalu turun ke bawah */
         background: #fff;
         display: flex;
-        align-items: center; /* center vertical */
-        justify-content: center; /* center horizontal */
-        color: #2d2d2d;
+        justify-content: center;
+        align-items: center;
         font-size: 12px;
-        box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.05);
+        color: #2d2d2d;
 
-        padding: 8px 5px; /* hilangkan padding yang bikin tidak simetris */
-        font-style: normal;
+        padding-block: 12px; /* padding atas–bawah stabil saat zoom */
+        padding-inline: 5px;
+
+        min-height: 30px; /* menjaga tinggi footer tetap stabil */
+        box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.05);
       }
 
       /* TABLET RESPONSIVE */
